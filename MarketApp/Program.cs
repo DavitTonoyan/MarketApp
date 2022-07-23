@@ -1,3 +1,4 @@
+using MarketApp.Helpers;
 using MarketApp.Models;
 using MarketApp.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -47,6 +48,7 @@ builder.Services.AddDbContext<MarketContext>(options => options.UseSqlServer(
 
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IMarketService, MarketService>();
+builder.Services.AddAutoMapper(typeof(MarketMapper));
 
 
 var app = builder.Build();
